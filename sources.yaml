@@ -27,11 +27,6 @@ sources:
     limit: 3000
     priority: 100
 
-  - name: "barry-far/V2ray-Config"
-    url: "https://raw.githubusercontent.com/barry-far/V2ray-Config/main/All_Configs_Sub.txt"
-    limit: 2500
-    priority: 70
-
   # --- 需要 resolve_providers 的折叠源（保留观察） ---
   - name: "NiREvil/vless"
     url: "https://raw.githubusercontent.com/NiREvil/vless/main/sub/clash-meta.yml"
