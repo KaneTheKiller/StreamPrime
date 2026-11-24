@@ -8,143 +8,29 @@
 
 sources:
   # --- 高质量/已过滤源（优先） ---
-  # 2026-08-23 打野新增：0xRadikal/Free-v2ray-Configs（15min 自动更新，light 精选档全量）
-  # 2026-08-25 升级 light→verified：三轮真流量全过，比 light（未验证精选档）更严
-  - name: "0xRadikal/Free-v2ray-Configs"
-    url: "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs_base64.txt"
-    limit: 3000
-    priority: 95
-
-  # 2026-08-25 exa 打野新增：0xRadikal fast 档（verified 且 median 延迟 < 800ms）
-  - name: "0xRadikal/Free-v2ray-Configs-fast"
-    url: "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/fast/configs_base64.txt"
-    limit: 1000
-    priority: 96
-
-  # 2026-08-25 加回 light 档当量（2156 条，含未验证精选；与 verified/fast 并行走量大路线）
-  - name: "0xRadikal/Free-v2ray-Configs-light"
-    url: "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/light/configs_base64.txt"
-    limit: 3000
-    priority: 94
-
-  # 2026-08-23 exa 打野新增：sing-box 真 HTTP 204 验证活跃节点，每小时刷新（全量）
-  - name: "Au1rxx/free-vpn-subscriptions"
-    url: "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt"
-    limit: 2000
-    priority: 92
-
-  # 2026-08-23 exa 打野新增：ebrasha 巨量池（vless 3.5万 + vmess 6千，15min 更新）
-  # 2026-08-23 增大 limit：多进 L3 测活窗口，能过测活的才进池
-  - name: "ebrasha/free-v2ray-public-list-vless"
-    url: "https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/vless_configs.txt"
-    limit: 30000
-    priority: 85
-
-  - name: "ebrasha/free-v2ray-public-list-vmess"
-    url: "https://raw.githubusercontent.com/ebrasha/free-v2ray-public-list/refs/heads/main/vmess_configs.txt"
+  - name: "sakha1370/OpenRay"
+    url: "https://raw.githubusercontent.com/sakha1370/OpenRay/refs/heads/main/output/kind/http.txt"
     limit: 6000
     priority: 80
-
-  # 2026-08-25 exa 打野新增：v2go Go 聚合器，每小时 Xray 真流量验证后发布 working configs（原底部注释「未测活」是旧认知已过时）
-  - name: "Danialsamadi/v2go"
-    url: "https://raw.githubusercontent.com/Danialsamadi/v2go/main/AllConfigsSub.txt"
-    limit: 1500
-    priority: 90
-
-  # 2026-08-25 exa 打野新增：FastNodes 560+ 源聚合，verified=真 HTTP 204 通过（与 L3 同标准）
-  - name: "rtwo2/FastNodes-verified"
-    url: "https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/verified.txt"
-    limit: 1500
-    priority: 88
-
-  - name: "rtwo2/FastNodes-top"
-    url: "https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/top.txt"
-    limit: 1000
-    priority: 85
-
-  # 2026-08-25 exa 打野新增：FastNodes everything 全量池（19.3万条，fetch.py limit=均匀采样 3000 条走 L3 漏斗）
-  - name: "rtwo2/FastNodes-everything"
-    url: "https://raw.githubusercontent.com/rtwo2/FastNodes/main/sub/everything.txt"
-    limit: 3000
-    priority: 82
-
-  - name: "blue2sea/public"
-    # 入口页会 429/空壳；真正节点在 proxy-providers 嵌套 URL
-    # token 由 fetch.py 动态解析；此 url 作 fallback
-    url: "https://blue2sea.com/clash/2143c2ec19da075e495552259ad4bade"
-    dynamic: blue2sea
-    headers:
-      User-Agent: "ClashforWindows/0.20.39"
-    resolve_providers: true
-    priority: 100
-
-  # --- 2026-08-22 实测出货大源（提权 + 放宽 limit） ---
-  - name: "cbusifabcap/daily_free_vpn"
-    url: "https://raw.githubusercontent.com/cbusifabcap/daily_free_vpn/main/Z.txt"
-    priority: 90
-
-  - name: "Mahdi0024/ProxyCollector"
-    url: "https://raw.githubusercontent.com/Mahdi0024/ProxyCollector/master/sub/proxies.txt"
+    
+  - name: "sakha1370/OpenRay"
+    url: "https://raw.githubusercontent.com/sakha1370/OpenRay/refs/heads/main/output/kind/https.txt"
     limit: 2500
     priority: 85
 
-  - name: "ALIILAPRO/v2rayNG-Config"
-    url: "https://raw.githubusercontent.com/ALIILAPRO/v2rayNG-Config/main/server.txt"
-    priority: 80
+  - name: "sakha1370/OpenRay"
+    url: "https://raw.githubusercontent.com/sakha1370/OpenRay/refs/heads/main/output/kind/hysteria2.txt"
+    priority: 100
 
-  - name: "Epodonios/v2ray-configs"
-    url: "https://raw.githubusercontent.com/Epodonios/v2ray-configs/main/All_Configs_Sub.txt"
+  - name: "sakha1370/OpenRay"
+    url: "https://raw.githubusercontent.com/sakha1370/OpenRay/refs/heads/main/output/kind/socks.txt"
     limit: 3000
-    priority: 75
+    priority: 100
 
   - name: "barry-far/V2ray-Config"
     url: "https://raw.githubusercontent.com/barry-far/V2ray-Config/main/All_Configs_Sub.txt"
     limit: 2500
     priority: 70
-
-  - name: "MatinGhanbari/v2ray-configs"
-    url: "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt"
-    limit: 2000
-    priority: 65
-
-  - name: "MhdiTaheri/V2rayCollector"
-    url: "https://raw.githubusercontent.com/MhdiTaheri/V2rayCollector/main/sub/mix"
-    limit: 1500
-    priority: 60
-
-  # --- 中小体量源（保留） ---
-  - name: "ermaozi/get_subscribe"
-    url: "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt"
-    priority: 50
-
-  - name: "Barabama/yudou66"
-    url: "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/yudou66.txt"
-    priority: 50
-
-  - name: "Barabama/nodefree"
-    url: "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodefree.txt"
-    priority: 45
-
-  - name: "Barabama/v2rayshare"
-    url: "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/v2rayshare.txt"
-    priority: 45
-
-  - name: "Barabama/wenode"
-    url: "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/wenode.txt"
-    priority: 45
-
-  - name: "roosterkid/openproxylist"
-    url: "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt"
-    limit: 300
-    priority: 40
-
-  # 2026-08-26 复查复活：chengaopan/AutoMergePublicNodes（7988⭐，今天仍在 push）
-  # 8/22 曾因 raw=1 空壳砍掉；现在 list.txt 130 条（113 有效，hysteria2 98 为主）
-  # 注意 list_result.csv 显示其子源大多 0 节点（自身低产期），当补充源用
-  - name: "chengaopan/AutoMergePublicNodes"
-    url: "https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.txt"
-    limit: 500
-    priority: 55
 
   # --- 需要 resolve_providers 的折叠源（保留观察） ---
   - name: "NiREvil/vless"
