@@ -39,7 +39,7 @@ def _env_float(name, default):
 PROTOCOLS = (
     'vmess://', 'vless://', 'trojan://', 'ss://',
     'ssr://', 'hy2://', 'hysteria2://', 'hysteria://',
-    'socks5://', 'socks://',
+    'socks5://', 'socks://', 'http://', 'https://',
 )
 
 GEOIP_DB = os.environ.get('GEOIP_DB', 'GeoLite2-Country.mmdb')
